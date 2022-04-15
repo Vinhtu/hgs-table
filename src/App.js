@@ -115,20 +115,16 @@ const columns = [
     text: "Product Price",
   },
 ];
-const data = [{ name: "1" }, { name: "2" }];
 
 const selectRow = {
   mode: "checkbox",
   clickToSelect: true,
 };
 
+const data = [ '1' ,  "2", "xóa" ];
+
 function App() {
-  const onclick = {
-    onClick: (e, row, rowIndex) => {
-      console.log("sate");
-    },
-  };
-  console.log();
+
   return (
     <ToolkitProvider
       keyField="id"
@@ -151,6 +147,7 @@ function App() {
               {...props.baseProps}
               pagination={paginationFactory()}
               filter={filterFactory()}
+              contextmenu={data}
             />
           </div>
         );
